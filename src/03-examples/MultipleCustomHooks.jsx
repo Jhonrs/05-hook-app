@@ -1,6 +1,6 @@
 import { useCounter, useFetch } from "../hooks";
-import { LoadingQuote } from "./LoadingQuote";
-import { Quote } from "./Quote";
+import { LoadingQuote, Quote } from "./index";
+
 
 
 export const MultipleCustomHooks = () => {
@@ -8,7 +8,7 @@ export const MultipleCustomHooks = () => {
 
     const { counter, increment } = useCounter(1);
     const { data, isLoading, hasError } = useFetch(`https://api.adviceslip.com/advice/${ counter }`);
-
+    
     const { slip: { slip_id, advice } } = 
         !!data ? data : { slip: { slip_id:'', advice:'' }};
        
